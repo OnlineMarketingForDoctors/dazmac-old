@@ -629,11 +629,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-  // Mobile nav
   var burger=document.getElementById('burger'),nav=document.getElementById('navLinks');
   burger&&burger.addEventListener('click',function(){nav.classList.toggle('open');});
   nav&&nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open');});
-  // Scroll reveal
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});</script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
 </body>
 </html>
